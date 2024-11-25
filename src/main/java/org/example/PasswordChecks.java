@@ -12,4 +12,11 @@ public class PasswordChecks {
     public static boolean checkUpperAndLower(String password) {
         return password.matches(".*[A-Z].*") && password.matches(".*[a-z].*");
     }
+
+    public static boolean checkWeak(String password) {
+        if (password.equals("Password1") || password.equals("Aa345678")) {
+            return false;
+        }
+        return true;
+    }
 }

@@ -34,4 +34,13 @@ public class passwordTests {
         Assertions.assertTrue(UpperLower);
     }
 
+    @Test
+    void checkWeak_ExpectTrue_WhenWeak() {
+        // GIVEN
+        String password = "Password1";
+        // WHEN
+        boolean Notweak = PasswordChecks.checkWeak(password);
+        // THEN
+        Assertions.assertTrue(Notweak);
+    }
 }
