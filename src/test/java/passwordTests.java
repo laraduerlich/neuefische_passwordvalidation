@@ -37,10 +37,20 @@ public class passwordTests {
     @Test
     void checkWeak_ExpectTrue_WhenWeak() {
         // GIVEN
-        String password = "Password1";
+        String password = "Password";
         // WHEN
         boolean Notweak = PasswordChecks.checkWeak(password);
         // THEN
         Assertions.assertTrue(Notweak);
+    }
+
+    @Test
+    void checkSpecialCharacters_ExpectTrue_WhenSpecialCharacters() {
+        // GIVEN
+        String password = "Password123?";
+        // WHEN
+        boolean special = PasswordChecks.checkSpecialCharacters(password);
+        // THEN
+        Assertions.assertTrue(special);
     }
 }

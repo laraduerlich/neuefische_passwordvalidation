@@ -6,11 +6,26 @@ public class PasswordChecks {
     }
 
     public static boolean checkDigits(String password) {
-        return password.matches(".*[0-9].*");
+        for (int i = 0; i < password.length(); i++) {
+            if (password.charAt(i) >= '0' && password.charAt(i) <= '9') {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static boolean checkUpperAndLower(String password) {
-        return password.matches(".*[A-Z].*") && password.matches(".*[a-z].*");
+        boolean lowercase = false;
+        boolean uppercase = false;
+        for (int i = 0; i < password.length(); i++) {
+            if (Character.isUpperCase(password.charAt(i))) {
+                uppercase = true;
+            }
+            if (Character.isLowerCase(password.charAt(i))) {
+                lowercase = true;
+            }
+        }
+        return (lowercase && uppercase);
     }
 
     public static boolean checkWeak(String password) {
@@ -18,5 +33,9 @@ public class PasswordChecks {
             return false;
         }
         return true;
+    }
+
+    public static boolean checkSpecialCharacters(String password) {
+        return password.matches(".*[!,#,§,$,%,&,/,=,?,+,*,:,;,>,<,°,^,-,_].*");
     }
 }
