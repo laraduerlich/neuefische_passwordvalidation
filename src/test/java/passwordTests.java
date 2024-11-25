@@ -13,4 +13,14 @@ public class passwordTests {
         // THEN
         Assertions.assertTrue(length);
     }
+
+    @Test
+    void checkDigits_ExpectTrue_WhenDigits() {
+        // GIVEN
+        String password = "password123";
+        // WHEN
+        boolean digits = PasswordChecks.checkDigits(password);
+        // THEN
+        Assertions.assertTrue(digits);
+    }
 }
