@@ -23,4 +23,15 @@ public class passwordTests {
         // THEN
         Assertions.assertTrue(digits);
     }
+
+    @Test
+    void checkUpperAndLower_ExpectTrue_WhenUpperAndLower() {
+        // GIVEN
+        String password = "Password123";
+        // WHEN
+        boolean UpperLower = PasswordChecks.checkUpperAndLower(password);
+        // THEN
+        Assertions.assertTrue(UpperLower);
+    }
+
 }
